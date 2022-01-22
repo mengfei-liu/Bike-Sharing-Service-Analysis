@@ -105,7 +105,7 @@ GROUP BY YEAR(start_date) , MONTH(start_date);
 
 -- 1.5 The average number of trips a day for each year-month combination in the dataset.
 -- Assume that only those days have records of trip can be counted. 
--- The reason for those without records is that bixi could be under maintenance or not open to the public, etc.
+-- The reason for those without records is that bike-sharing service could be under maintenance or not open to the public, etc.
 /* 
 SELECT 
 	DATE(start_date) AS Each_Day, COUNT(*) AS Total_Trips_EachDay	-- trips for each day
@@ -258,7 +258,7 @@ ON Members.MyMonth = Total.MyMonth;
 /**********************************************************/
 
 /*	Question 3	*/
--- 3.1 Which time of the year the demand for Bixi bikes is at its peak?
+-- 3.1 Which time of the year the demand for bike-sharing service is at its peak?
 SELECT 
 	Members.MyMonth AS The_Month, Members.Member_Amount, Total.Total_Amount, (Members.Member_Amount / Total.Total_Amount) AS Fraction
 FROM
@@ -291,7 +291,7 @@ ORDER BY Total.Total_Amount DESC;
 		4		163417			195662		0.8352
 		11		138499			149794		0.9246
 */
--- From the table we can see the demand for Bixi bikes reached the peak at July
+-- From the table we can see the demand for bike-sharing service reached the peak at July
 
 -- 3.2 If you were to offer non-members a special promotion in an attempt to convert them to members, when would you do it?
 SELECT 
@@ -326,8 +326,8 @@ ORDER BY Fraction;
 	10			483445			559506		0.8641
 	11			138499			149794		0.9246
 */
--- From the table we can see in July the Bixi bikes have the highest usage. However, the bikes used by members is the lowest.
--- It shows that more nonmembers are interested in the Bixi bikes. Therefore, July is a good month to offer non-members a special promotion.
+-- From the table we can see in July the bike-sharing bikes have the highest usage. However, the bikes used by members is the lowest.
+-- It shows that more nonmembers are interested in the bike-sharing service. Therefore, July is a good month to offer non-members a special promotion.
 
 /**********************************************************/
 
